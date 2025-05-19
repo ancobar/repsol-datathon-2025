@@ -15,6 +15,18 @@ We developed a complete solution that:
 Ricardo Urech, Blanca Burgaleta, Ana Cortés, Vibhushan Balaji & Tomás Valbuena
 
 
+## 📁 Dataset
+
+The dataset used in this project was provided by Repsol as part of the IE Sustainability Datathon 2025 and contains confidential industrial and meteorological data.
+
+Due to confidentiality agreements, the raw data cannot be shared publicly. However, all results, code logic, and methodologies are fully available in this repository.
+
+**Data Description:**
+- Hourly solar generation and electricity consumption data from an industrial facility.
+- Meteorological inputs from four nearby weather grid points.
+- Time-aligned to the Europe/Madrid timezone.
+
+
 ## 🚀 Key Highlights
 
 - 📈 **XGBoost model (weekday-only)** achieved **MAE = 4.91 kWh**
@@ -25,12 +37,15 @@ Ricardo Urech, Blanca Burgaleta, Ana Cortés, Vibhushan Balaji & Tomás Valbuena
 
 ## 🔍 Project Structure
 
-
+- **README.md**                           >>> Project overview, goals, methods, and results (this file)
+- **EDA and Feature Engineering.ipynb**   >>> Exploratory data analysis, cleaning, and feature engineering for ML modeling
+- **Solar Prediction Model.ipynb**       >>> Objective 1: Predictive modeling of maximum solar generation (Random Forest & XGBoost)
+- **Battery Optimization.ipynb**          >>> Objective 2: Battery usage optimization to improve self-consumption and reduce CO₂ emissions
 
 
 ## 🧰 Tools & Technologies
 
-- Python (Pandas, Scikit-learn, XGBoost, SciPy)
+- Python (Pandas, Numpy, Seaborn, Scikit-learn, Statsmodels, Matplotlib, XGBoost, SciPy, Optimization_engine)
 - Jupyter Notebooks
 - Git & GitHub for version control
 
