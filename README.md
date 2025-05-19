@@ -12,7 +12,7 @@ We developed a complete solution that:
 
 ## 👥 Team
 
-Ricardo Urech, Blanca Burgaleta, Ana Cortés, Vibhushan Balaji, Tomás Valbuena
+Ricardo Urech, Blanca Burgaleta, Ana Cortés, Vibhushan Balaji & Tomás Valbuena
 
 
 ## 🚀 Key Highlights
@@ -28,13 +28,11 @@ Ricardo Urech, Blanca Burgaleta, Ana Cortés, Vibhushan Balaji, Tomás Valbuena
 
 
 
-
 ## 🧰 Tools & Technologies
 
 - Python (Pandas, Scikit-learn, XGBoost, SciPy)
 - Jupyter Notebooks
-- PDF + PPT reporting
-- Git, GitHub for version control
+- Git & GitHub for version control
 
 
 ## 📄 License
