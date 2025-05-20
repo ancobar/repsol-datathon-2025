@@ -1,55 +1,99 @@
-# ☀️ IE Sustainability Datathon 2025: Solar Optimization for CO₂ Reduction
+# 🎵 Song Popularity Prediction
 
-## 📍 Project Overview
+This project analyzes the factors that influence a song’s popularity using clustering (K-Means) and predictive modeling (Linear Regression), developed as part of a group assignment for the **Machine Learning I** course.
 
-In the 2025 IE Sustainability Datathon, our team tackled a real-world challenge posed by Repsol: **how can industrial plants maximize solar self-consumption and reduce CO₂ emissions through intelligent forecasting and battery optimization?**
+> 🚀 The goal: Help producers and artists better understand what musical attributes drive success and use that insight to forecast whether a song will perform well.
 
-We developed a complete solution that:
-- Forecasts maximum solar generation using ML
-- Optimizes battery usage for self-consumption or carbon impact
-- Quantifies avoided CO₂ emissions (direct and lifecycle)
+---
 
+## 🧠 Project Objectives
 
-## 👥 Team
+- Identify key characteristics that define different types of songs
+- Group songs based on their acoustic, instrumental, and rhythmic features using **unsupervised learning**
+- Predict track popularity using **linear regression**, measuring the influence of genre, artist popularity, and other musical properties
+- Deliver strategic recommendations for music production and marketing
 
-Ricardo Urech, Blanca Burgaleta, Ana Cortés, Vibhushan Balaji & Tomás Valbuena
+---
 
+## 📁 Project Structure
 
-## 📁 Dataset
+- Assignment 1_Popularity Prediction_Notebook.ipynb >>> Full code: EDA, Clustering (K-Means), Regression models
+- README.md >>> Project summary and documentation
 
-The dataset used in this project was provided by Repsol as part of the IE Sustainability Datathon 2025 and contains confidential industrial and meteorological data.
+---
 
-Due to confidentiality agreements, the raw data cannot be shared publicly. However, all results, code logic, and methodologies are fully available in this repository.
+## 🔍 Dataset
 
-**Data Description:**
-- Hourly solar generation and electricity consumption data from an industrial facility.
-- Meteorological inputs from four nearby weather grid points.
-- Time-aligned to the Europe/Madrid timezone.
+The dataset, `Songs_2025.xlsx`, includes **2,300 songs** with 19 features, such as:
+- Musical properties: `danceability`, `energy`, `acousticness`, `tempo`, etc.
+- Metadata: `artist popularity`, `release year`, `genre`, etc.
 
+---
 
-## 🚀 Key Highlights
+## 📊 Methodology
 
-- 📈 **XGBoost model (weekday-only)** achieved **MAE = 4.91 kWh**
-- ⚡ Optimization increased solar self-consumption (Ra) from **82.36% to 85.26%**
-- 🌍 CO₂ optimization avoided **+5,000 gCO₂eq** more emissions
-- 🧪 Lifecycle emissions analysis showed **124,028 gCO₂eq avoided**
+### 1. **Exploratory Data Analysis**
+- Cleaned outliers (279 rows)
+- Consolidated multiple genres into a new `"super-genre"` feature
+- One-hot encoded genre labels for modeling
 
+### 2. **Segmentation (K-Means Clustering)**
+- Used 4 features: `speechiness`, `acousticness`, `instrumentalness`, and `liveness`
+- Applied the **Elbow Method** → Optimal `k = 5`
+- Silhouette Score = **0.446**, Inertia = **2314.23**
+- Cluster profiling yielded insights into listener segments
 
-## 🔍 Project Structure
+### 3. **Linear Regression**
+- Used OLS with stepwise selection
+- Top features: `artist popularity`, `energy`, `reggae`, `rock`, `rnb_soul`, etc.
+- Achieved **R² = 0.34**, with MAE, RMSE, and MAPE indicating good model reliability
 
-- **README.md**                           >>> Project overview, goals, methods, and results (this file)
-- **EDA and Feature Engineering.ipynb**   >>> Exploratory data analysis, cleaning, and feature engineering for ML modeling
-- **Solar Prediction Model.ipynb**       >>> Objective 1: Predictive modeling of maximum solar generation (Random Forest & XGBoost)
-- **Battery Optimization.ipynb**          >>> Objective 2: Battery usage optimization to improve self-consumption and reduce CO₂ emissions
+---
 
+## 💡 Key Insights
 
-## 🧰 Tools & Technologies
+- 🔋 **Energy** has a strong *negative* impact on popularity → calmer songs are more successful
+- 🎤 **Reggae** songs tend to perform well
+- 🌟 **Artist popularity** significantly boosts track success
+- 🎸 Genres like **rock** and **acoustic** show moderate positive influence
 
-- Python (Pandas, Numpy, Seaborn, Scikit-learn, Statsmodels, Matplotlib, XGBoost, SciPy, Optimization_engine)
-- Jupyter Notebooks
-- Git & GitHub for version control
+---
 
+## 📈 Model Performance
+
+| Metric        | Value (Test Set) |
+|---------------|------------------|
+| R² Score      | 0.34             |
+| MAPE          | < 10%            |
+| MAE / RMSE    | Low              |
+
+> 📌 These results suggest a practical tool for producers and marketers to forecast a song's potential.
+
+---
+
+## 🛠 Tools Used
+
+- Python
+- Pandas, NumPy, Matplotlib, Seaborn
+- Scikit-learn (KMeans)
+- Statsmodels (OLS regression)
+
+---
+
+## 🙋‍♀️ Authors
+
+Ana Cortés Barquier, Tomás Valbuena Sierra, Tomás Luz, Robert Koegel, Hiromitsu Fujiyama
+
+---
+
+## 📌 Future Improvements
+
+- Incorporate **social media engagement** and **listener demographics**
+- Explore **non-linear models** like Random Forests or Gradient Boosting
+- Build a **classification model** to predict “hit or not” based on threshold
+
+---
 
 ## 📄 License
 
-This project is for educational and professional showcase purposes. Please contact for collaboration.
+This project is for academic and educational purposes only.
